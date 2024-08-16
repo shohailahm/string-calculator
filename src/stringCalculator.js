@@ -6,12 +6,9 @@ export function add(numbers) {
   let delimiter = /,|\n/;
 
   if (numbers.startsWith("//")) {
-    console.log(numbers);
-
     const parts = numbers.split("\n", 2);
     delimiter = new RegExp(parts[0].slice(2));
     numbers = parts[1];
-    console.log(parts);
   }
 
   const nums = numbers.split(delimiter).map(Number);
